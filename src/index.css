@@ -27,8 +27,8 @@
     --muted-foreground: 210 10% 45%;
 
     /* Vibrant orange - energia e ação */
-    --accent: 94 56% 52%;
-    /*--accent: 25 95% 53%; */
+    /*--accent: 94 56% 52%;*/
+    --accent: 25 95% 53%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -95,8 +95,9 @@
     @apply border-border;
   }
 
-  html {
+  html, body {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {

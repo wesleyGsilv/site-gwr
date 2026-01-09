@@ -77,7 +77,8 @@ export const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className={`lg:hidden p-2 ${isScrolled ? "text-foreground" : "text-primary-foreground"}`}
+            className="lg:hidden p-2"
+            style={{ color: 'hsl(25.05deg 95.37% 57.65%)' }}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -101,7 +102,22 @@ export const Header = () => {
                   key={item.href}
                   href={item.href}
                   className="text-primary-foreground/90 hover:text-accent transition-colors font-medium py-2 border-b border-primary-foreground/10"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={e => {
+                    e.preventDefault();
+                    setIsMobileMenuOpen(false);
+                    setTimeout(() => {
+                      const target = document.querySelector(item.href);
+                      if (target) {
+                        const header = document.querySelector('header');
+                        const headerHeight = header ? header.offsetHeight : 0;
+                        const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
+                        window.scrollTo({
+                          top: elementPosition - headerHeight - 8, // 8px extra padding
+                          behavior: 'smooth'
+                        });
+                      }
+                    }, 200);
+                  }}
                 >
                   {item.label}
                 </a>

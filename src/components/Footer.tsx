@@ -5,7 +5,7 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-secondary py-12 lg:py-16" style={{ /*borderTop: '1px solid hsl(25.05deg 95.37% 57.65%)' */ borderTop: '1px solid #7BC441'}}>
+    <footer className="bg-secondary py-12 lg:py-16" style={{borderTop: '1px solid #FF9100'}}>
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Logo & Description */}
@@ -14,7 +14,7 @@ export const Footer = () => {
               <img src={logo} alt="GWR Empreiteira" className="h-12 w-auto" />
             </div>
             <p className="text-muted-foreground max-w-md leading-relaxed">
-              Transformamos ideias em obras sólidas e duradouras. Especialistas em 
+              Transformamos ideias em obras sólidas e duradouras. Especialistas em
               construção, reformas e acabamentos com qualidade incomparável.
             </p>
           </div>
